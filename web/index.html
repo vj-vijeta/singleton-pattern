@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Chat</title>
+</head>
+<body>
+  <input type="text" id="roomID" placeholder="Room ID">
+  <button onclick="joinRoom()">Join Room</button>
+  <br><br>
+  <input type="text" id="username" placeholder="Username">
+  <input type="text" id="message" placeholder="Message">
+  <button onclick="sendMessage()">Send Message</button>
+  <div id="chat"></div>
+
+  <script>
+    let socket;
+    let room = null;
+    let username = null;
+
+    function joinRoom() {
+      const roomID = document.getElementById('roomID').value;
+      const user = document.getElementById('username').value;
+
+      if (roomID && user && !socket) {
+        room = roomID;
+        username = user;
+        socket = new WebSocket(`ws://localhost:3000?room=${roomID}&username=${user}`);
+        socket.onerror = (error) => {
+            console.error('WebSocket error:', error);
+            alert('WebSocket connection failed. Please try again later.');
+         };
+
+        socket.onopen = (event) => {
+          console.log('Connected to room:', room);
+        };
+
+        socket.onmessage = (event) => {
+          const chat = document.getElementById('chat');
+          const message = event.data;
+          chat.innerHTML += `<p>${message}</p>`;
+        };
+
+        socket.onerror = (error) => {
+          console.error('WebSocket error:', error);
+          // Handle error here, e.g., display an error message to the user
+          alert('WebSocket connection failed. Please try again later.');
+        };
+      }
+    }
+
+    function sendMessage() {
+      const message = document.getElementById('message').value;
+      if (message && socket) {
+        socket.send(message);
+        document.getElementById('message').value = '';
+      }
+    }
+  </script>
+</body>
+</html>
