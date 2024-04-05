@@ -38,7 +38,7 @@ This repository contains a simple real-time chat application built with WebSocke
    ```
    node server.js
    ```
-
+```
 4. Open `index.html` in a web browser to access the chat interface.
 
 ## How to Use
@@ -106,5 +106,5 @@ While the Singleton Pattern offers various benefits, it should be used judicious
 ### Conclusion
 
 In the chat application, the Singleton Pattern ensures that chat rooms are effectively managed with only one instance per room ID, facilitating efficient communication and resource utilization. By adhering to the Singleton Pattern, the application maintains simplicity, consistency, and scalability in managing chat rooms.
-
+```
 
