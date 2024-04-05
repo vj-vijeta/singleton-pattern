@@ -1,4 +1,4 @@
-###### Real-time Chat Application
+# Real-time Chat Application
 
 This repository contains a simple real-time chat application built with WebSocket technology, enabling users to create/join chat rooms and exchange messages in real-time.
 
