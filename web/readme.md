@@ -24,7 +24,7 @@ This repository contains a simple real-time chat application built with WebSocke
 1. Clone the repository:
 
    ```
-   git clone <repository_url>
+   git clone https://github.com/vj-vijeta/singleton-pattern.git
    ```
 
 2. Install dependencies:
@@ -106,5 +106,5 @@ While the Singleton Pattern offers various benefits, it should be used judicious
 ### Conclusion
 
 In the chat application, the Singleton Pattern ensures that chat rooms are effectively managed with only one instance per room ID, facilitating efficient communication and resource utilization. By adhering to the Singleton Pattern, the application maintains simplicity, consistency, and scalability in managing chat rooms.
-```
+
 
