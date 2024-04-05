@@ -31,11 +31,17 @@ This repository contains a simple real-time chat application built with WebSocke
    ```
    npm install
    ```
-
-3. Start the server:
+   
+3. Install dependencies:
 
    ```
-   node server.js
+   npm install ws
+   ```
+
+4. Start the server:
+
+   ```
+   node sever.js
    ```
 
 4. Open `index.html` in a web browser to access the chat interface.
